@@ -1,0 +1,17 @@
+TAREFA 2 - ALGORITMO EM PORTUGOL DA HORA QUE ACORDAR.
+
+1-Vou com meu braço em direção ao celular.
+2-Há duas opções quando pego o celular que é 1-(adiar 5 minutos) ou 2(desligar o alarme).
+3-Se escolher 1-(adiar 5 minutos).
+4-    Deslizo com dedo na tela do celular para baixo.
+5-    Coloco o celular no mesmo canto já fixo.
+6-    Retorno a dormir.
+7-Se escolher 2(desligar o alarme).
+8-  Deslizo com o dedo para cima.
+9-Me levanto da cama.
+10- Desligo o ventilador.
+11- Ando para pegar a toalha.
+12- Me dirigo ao banheiro.
+13- Tomo meu banho.
+14- Escovo meus dentes.(Poderia descrever mais mais)
+15- começa da rotina do dia a dia.
