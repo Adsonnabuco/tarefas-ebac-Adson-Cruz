@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ProjetoMd7/ProjetoMd7.iml" filepath="$PROJECT_DIR$/ProjetoMd7/ProjetoMd7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod5/mod5.iml" filepath="$PROJECT_DIR$/mod5/mod5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tarefa_classes/tarefa_classes.iml" filepath="$PROJECT_DIR$/tarefa_classes/tarefa_classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tarefas-ebac-Adson-Cruz.iml" filepath="$PROJECT_DIR$/tarefas-ebac-Adson-Cruz.iml" />
+    </modules>
+  </component>
+</project>
