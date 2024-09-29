@@ -15,4 +15,5 @@ public class Demo {
             return new semContratosfactory();
         }
     }
+
 }
