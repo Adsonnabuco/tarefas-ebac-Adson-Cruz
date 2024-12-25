@@ -20,4 +20,5 @@ public class ClienteDao implements IClienteDao {
 //        throw new UnsupportedOperationException("Não funciona a exclusão sem config do banco");
         return null;
     }
+
 }
