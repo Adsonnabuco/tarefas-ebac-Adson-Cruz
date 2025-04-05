@@ -30,7 +30,7 @@ public class Acessorio {
 	private String descricao;
 
 	@ManyToOne
-	List<Carro> Carro;
+	private Carro Carro;
 
 	public Integer getId() {
 		return id;
@@ -64,12 +64,13 @@ public class Acessorio {
 		this.descricao = descricao;
 	}
 
-	public List<Carro> getCarro() {
+	public Carro getCarro() {
 		return Carro;
 	}
 
-	public void setCarro(List<Carro> carro) {
+	public void setCarro(Carro carro) {
 		Carro = carro;
 	}
+
 	
 }
