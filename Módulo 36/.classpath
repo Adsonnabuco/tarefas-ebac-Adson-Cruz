@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="exemplos_internet/spring-data-examples/multi-store/src/main/java"/>
+	<classpathentry kind="src" path="exemplos_internet/spring-data-examples/multi-store/src/test/java"/>
+	<classpathentry kind="src" path="ExemploVendasMod36/src/main/java"/>
+	<classpathentry kind="src" path="ExemploVendasMod36/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
