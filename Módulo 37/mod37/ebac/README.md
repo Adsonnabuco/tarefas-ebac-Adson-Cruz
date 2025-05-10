@@ -1,115 +1,127 @@
-MAVEN
 
-O Maven é uma ferramenta de integração de projetos ou seja um gerenciador de dependências controla as versões de forma geral consegue executar testes, e gerar relatórios de produtividade.
+# 📦 Maven e Gradle – Módulo 37
 
-Suas principais tarefas:
+## 🔧 Maven
 
-Compilação de código.
-Teste de Código-Fonte.
-Empacotar o código-fonte em um artefato(ZIP, WAR, JAR ou EAR).
-Lida com o controle de releases dos artefatos.
-Gerar JavaDocs.
-Gerenciar o projeto.
-Pom.xml
-Ao utilizar o Maven, configuramos todas as nossas configurações no arquivo "pom.xml" esse arquivo que fornece todas as configurações necessárias para o projeto.
+O **Maven** é uma ferramenta de automação de builds e gestão de dependências em projetos Java.
 
-Pasted image 20250509203202.png
+### ✅ Funções principais:
 
-Nesse pom.xml contém algumas tag's irei explicar algumas delas
+- ✅ Compilação do código
+- ✅ Testes automatizados
+- ✅ Empacotamento (ZIP, WAR, JAR, EAR)
+- ✅ Controlo de versões
+- ✅ Geração de JavaDocs
+- ✅ Gestão centralizada do projeto via `pom.xml`
 
-** Essa tag encapsula toda as informações relacionadas ao nosso projeto Maven.
+---
 
-Representa qual é a versão do pom estamos utilizando.
+## 📄 Estrutura do `pom.xml`
 
-É o nome base da empresa ou grupo que criou o projeto.
-Ex:br.com.acruz
+No Maven, todas as configurações ficam no ficheiro `pom.xml`.
 
-É o nome do projeto em sí. Ex: CadastroDeCliente.
+### Principais tags:
 
-Representa a versão que está sendo utilizada.
+- `<project>`: encapsula as configurações do Maven
+- `<modelVersion>`: versão do modelo POM
+- `<groupId>`: grupo ou empresa (ex: `br.com.acruz`)
+- `<artifactId>`: nome do projeto (ex: `CadastroDeCliente`)
+- `<version>`: versão do projeto
+- `<packaging>`: tipo do artefato (ex: `jar`, `war`)
 
-informa que após a compilação retornará um tipo de arquivo.
+---
 
-Dependências
-Basicamente as dependências são como as bibliotecas, ou seja anteriormente era necessário adicionar as bibliotecas manualmente, baixando os arquivos .jars e adicionando no projeto.
-Porém como falamos anteriormente ao utilizar o maven ele consegue gerenciar isso para nós, ou seja não sendo mais necessário fazer o download desses arquivos .jar's
-porém faz-se necessário configurar qual será a biblioteca/dependências que vc quer utilizar no seu projeto.
+## 📚 Dependências
 
-Para adicionar uma dependência no projeto você poderá consultar toda a estrutura da sua biblioteca por exemplo digamos que eu queria adicionar a dependências do Hibernate, basta irmos no nosso arquivo pom.xml, e adicionar a (Dependency) dentro das nossas dependencies especificando o groudIp, artifactId e a version:
+As dependências são bibliotecas necessárias no projeto. Com o Maven, não precisas mais adicionar `.jar` manualmente.
 
-Basicamente as dependências são como as bibliotecas, ou seja anteriormente era necessário adicionar as bibliotecas manualmente, baixando os arquivos .jars e adicionando no projeto.
+### 🧪 Exemplo:
 
-Porém como falamos anteriormente ao utilizar o maven ele consegue gerenciar isso para nós, ou seja não sendo mais necessário fazer o download desses arquivos .jar's
-porém faz-se necessário configurar qual será a biblioteca/dependências que vc quer utilizar no seu projeto.
-
-Para adicionar uma dependência no projeto você poderá consultar toda a estrutura da sua biblioteca por exemplo digamos que eu queria adicionar a dependências do Hibernate, basta irmos no nosso arquivo pom.xml, e adicionar a (Dependency) dentro das nossas dependencies especificando o groudIp, artifactId e a version:
-
+```xml
 <dependencies>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-test</artifactId>
-		<scope>test</scope>
-	</dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
 </dependencies>
+```
 
-Como saber qual groupId, artifactId, version, scope. Voce pode acessar o site do maven repository e buscar pela dependência desejada. mvnrepository.com
+🔍 Consulta dependências em: [https://mvnrepository.com](https://mvnrepository.com)
 
-Escopo de Dependências.
-Escopo vai nos auxiliar com relação a quantidade de dependências trazidas pelo maven.
-Temos 6 tipos de escopos, são eles:
+---
 
-Compile, Runtime, Test, Provided, System, e Import.
+## 🔍 Escopos de Dependência
 
-Compile.
-Significa que é um scopo padrão, ou seja vai prover a depedência na hora que eu for compilar essa aplicação.
+```markdown
+| Escopo     | Descrição                                                                 |
+|------------|---------------------------------------------------------------------------|
+| compile    | Usado na compilação e execução (padrão)                                   |
+| provided   | Disponível na compilação, mas fornecido pelo ambiente de execução         |
+| test       | Apenas disponível para testes                                             |
+| system     | Similar ao `provided`, mas exige caminho específico (`systemPath`)        |
+| runtime    | Usado apenas em tempo de execução                                         |
+| import     | Importa dependências de outros `pom.xml`                                  |
+```
 
-Provided
-Significa que vai está no tempo de compilação, mas quando tiver no deploy ou em um servidor, ele na compilação vai manter sua versão, porém se eu subir para um servidor ou algum local onde já contem, ele vai atualizar para versão mais atual entre as duas máquinas.
+### Exemplo de `systemPath`:
 
-Test
-Dependências estão disponíveis apenas no momento da execução dos testes.
+```xml
+<dependency>
+  <groupId>com.exemplo</groupId>
+  <artifactId>alguma-coisa</artifactId>
+  <version>1.0</version>
+  <scope>system</scope>
+  <systemPath>${basedir}/lib/some-dependency.jar</systemPath>
+</dependency>
+```
 
-System
-Semelhante ao escopo provided, mas sua unica diferença é que é necessário declarar explicitamente onde a dependência pode ser encontrada no sistema usando a tag systemPath.
+---
 
-<systemPath>${basedir}/lib/some-dependency.jar</systemPath>
+## 🏷️ Snapshot vs Release
 
-Runtime
-As depedências estarão disponíveis no tempo de execução mas não no tempo de compilação.
+- **SNAPSHOT**: versão em desenvolvimento
+- **RELEASE**: versão final e estável
 
-Snapshot e Release
-Basicamente esses termos também são encontrados no nosso arquivo pom.xml, normalmente localizado proximo no artifactId do projeto, dentro da tag version.
-
-Snapshot - Basicamente quer dizer que esse projeto ainda está em desenvolvimento ou seja é possível que encontro bug's no decorrer do projeto em sí.
-
-Release - Diferentemente da Snapshot quer dizer que algo já foi lançado, ou seja já foi disponibilizado para o cliente pode aparecer tanto omitindo o nome e deixando apenas um numero de versão, ou pode está explicitamente escrito como release e um número de versão:
-
+```xml
 <version>0.0.1-SNAPSHOT</version>
-<version>1.1</version> | <version>1.1-RELEASE</version>
+<version>1.1</version>
+<version>1.1-RELEASE</version>
+```
 
-Perfil ou Profiles
-São configurações personalizadas, sendo possível criar perfis específicos para cada ambiente , como por exemplo: Produção, Homologação, Tests.
+---
 
-Exemplo de um profile para pular a execução dos testes:
+## 🎭 Perfis (Profiles)
 
+Permitem configurar diferentes comportamentos para ambientes distintos (ex: produção, testes).
+
+### Exemplo para ignorar testes:
+
+```xml
 <profiles>
-	<profile>
-		<id>Skip-tests</id>
-		<properties>
-			<maven.test.skip>true</maven.test.skip> {Propriedade para pular os testes}
-		</properties>
-	<profile>
+  <profile>
+    <id>skip-tests</id>
+    <properties>
+      <maven.test.skip>true</maven.test.skip>
+    </properties>
+  </profile>
 </profiles>
+```
 
-Como executar esse profile:
+### Para executar o perfil:
 
-Trecho para executar o perfil:
-mvn -Pskip-tests clean packege
+```bash
+mvn -Pskip-tests clean package
+```
 
-Gradle
-É uma ferramenta open source onde permite configurar arquivos de build por DSL(Domain Specific Language) baseada no groovy.
+---
 
-Para iniciar um projeto em Gradle, é necessário baixar o gradle, e após isso na pasta desejada aplicar o código:
+## ⚙️ Gradle
 
-Trecho:
-gradle init --type java-application.
+**Gradle** é uma ferramenta de build alternativa ao Maven, usando uma DSL em Groovy.
+
+### Criar um novo projeto:
+
+```bash
+gradle init --type java-application
+```
