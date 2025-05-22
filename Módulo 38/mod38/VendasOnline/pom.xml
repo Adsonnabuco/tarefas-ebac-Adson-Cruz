@@ -5,7 +5,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
-  
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-all-7.0</artifactId>
@@ -49,10 +48,11 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<release>21</release>  <!--or <release>10</release> -->
+					<release>11</release>  <!--or <release>10</release> -->
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
+  
+  
 </project>
