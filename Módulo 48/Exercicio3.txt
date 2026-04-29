@@ -1,0 +1,8 @@
+Exercicio: Você conseguiria entender o código sem documentá-lo?
+Sim, seria possível entender este código específico sem documentação porque ele segue
+princípios de Código Limpo. Os nomes das classes e métodos são intuitivos (adicionar, subtrair) e os métodos
+são curtos, o que torna o código "autodocumentado"
+
+Tecnicamente, para uma calculadora simples, a documentação é vai depender para o desenvolvedor que a escreveu.
+No entanto, ela é essencial para gerar APIs (via Javadoc) e para facilitar a manutenção por outros membros da
+equipe em projetos maiores.
